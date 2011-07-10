@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fname:</b>
+  <%= @user.fname %>
+</p>
+
+<p>
+  <b>Mname:</b>
+  <%= @user.mname %>
+</p>
+
+<p>
+  <b>Lname:</b>
+  <%= @user.lname %>
+</p>
+
+<p>
+  <b>Pnum:</b>
+  <%= @user.pnum %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @user.address %>
+</p>
+
+<p>
+  <b>Referral:</b>
+  <%= @user.referral %>
+</p>
+
+<p>
+  <b>Resume txt:</b>
+  <%= @user.resume_txt %>
+</p>
+
+<p>
+  <b>Resume bin:</b>
+  <%= @user.resume_bin %>
+</p>
+
+<p>
+  <b>Cletter:</b>
+  <%= @user.cletter %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -10,6 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110710192158) do
+
+  create_table "users", :force => true do |t|
+    t.string   "fname"
+    t.string   "mname"
+    t.string   "lname"
+    t.string   "pnum"
+    t.text     "address"
+    t.string   "referral"
+    t.text     "resume_txt"
+    t.binary   "resume_bin"
+    t.text     "cletter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
