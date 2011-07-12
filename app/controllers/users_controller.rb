@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  load_and_authorize_resource
+  
   # GET /users
   # GET /users.xml
   def index
@@ -35,6 +38,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    unauthorized! if cannot? :edit, @user
   end
 
   # POST /users

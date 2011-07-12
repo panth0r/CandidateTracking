@@ -24,6 +24,8 @@
     <%= f.text_field :lname %>
   </div>
 
+	<%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+
   <p><%= f.label :email %><br />
   <%= f.email_field :email %></p>
 

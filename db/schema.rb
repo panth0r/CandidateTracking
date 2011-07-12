@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110710215036) do
+ActiveRecord::Schema.define(:version => 20110712002205) do
+
+  create_table "opportunities", :force => true do |t|
+    t.string   "title"
+    t.text     "responsibilities"
+    t.text     "overview"
+    t.text     "qualifications"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "fname"
@@ -34,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20110710215036) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "role"
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true

@@ -16,6 +16,11 @@
 </p>
 
 <p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
   <b>Pnum:</b>
   <%= @user.pnum %>
 </p>
@@ -45,6 +50,12 @@
   <%= @user.cletter %>
 </p>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<p>
+	<% if can? :update, @user %>
+		<%= link_to 'Edit', edit_user_path(@user) %> |
+	<% end %>
+	<% if can? :destroy, @user %>
+		<%= link_to "Destroy", @user, :method => :delete, :confirm => "Are you sure?" %> |
+	<% end %>
 <%= link_to 'Back', users_path %>
+</p>
