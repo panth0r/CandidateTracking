@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    unauthorized! if cannot? :edit, @user
+#    unauthorized! if cannot? :edit, @user
   end
 
   # POST /users

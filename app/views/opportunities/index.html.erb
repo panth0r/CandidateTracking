@@ -18,8 +18,10 @@
     <td><%= opportunity.overview %></td>
     <td><%= opportunity.qualifications %></td>
     <td><%= link_to 'Show', opportunity %></td>
-    <td><%= link_to 'Edit', edit_opportunity_path(opportunity) %></td>
-    <td><%= link_to 'Destroy', opportunity, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% if can? :update, Opportunity %>
+    	<td><%= link_to 'Edit', edit_opportunity_path(opportunity) %></td>
+    	<td><%= link_to 'Destroy', opportunity, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
   </tr>
 <% end %>
 </table>

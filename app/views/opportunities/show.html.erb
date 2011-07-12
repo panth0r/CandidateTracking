@@ -20,6 +20,11 @@
   <%= @opportunity.qualifications %>
 </p>
 
+<% if can? :update, @user %>
+	<%= link_to 'Edit', edit_opportunity_path(@opportunity) %> |
+<% end %>
+<% if can? :destroy, @user %>
+	<%= link_to "Destroy", @user, :method => :delete, :confirm => "Are you sure?" %> |
+<% end %>
 
-<%= link_to 'Edit', edit_opportunity_path(@opportunity) %> |
 <%= link_to 'Back', opportunities_path %>

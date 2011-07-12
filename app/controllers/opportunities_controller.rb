@@ -1,4 +1,7 @@
 class OpportunitiesController < ApplicationController
+  
+  load_and_authorize_resource
+  
   # GET /opportunities
   # GET /opportunities.xml
   def index

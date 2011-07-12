@@ -5,6 +5,8 @@
     <th>Fname</th>
     <th>Mname</th>
     <th>Lname</th>
+		<th>Role</th>
+		<th>Email</th>
     <th>Pnum</th>
     <th>Address</th>
     <th>Referral</th>
@@ -21,6 +23,8 @@
     <td><%= user.fname %></td>
     <td><%= user.mname %></td>
     <td><%= user.lname %></td>
+		<td><%= user.role %></td>
+    <td><%= user.email %></td>
     <td><%= user.pnum %></td>
     <td><%= user.address %></td>
     <td><%= user.referral %></td>
@@ -28,8 +32,10 @@
     <td><%= user.resume_bin %></td>
     <td><%= user.cletter %></td>
     <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% if can? :update, @user %>
+    	<td><%= link_to 'Edit', edit_user_path(user) %></td>
+    	<td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
   </tr>
 <% end %>
 </table>

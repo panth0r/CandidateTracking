@@ -1,5 +1,10 @@
 >>>> Candidate Tracking
 
+//todo: 
+				
+				set default user role to applicant (upon creation) => done
+				allow users to edit their own user profiles => done
+
 >> Purpose
 
 Candidate Tracking's purpose is enabling small organizations the ability to manage and organize potential Candidates (for example, employees or members).
