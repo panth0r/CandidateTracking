@@ -7,8 +7,10 @@ class Ability
       can :manage, :all 
     elsif user.role == "recruiter"
       can :manage, :opportunities
+    elsif user.role == "applicant"
+      can :manage, :applications
     else
-      can :read, :all
+      can :read, :opportunities
     end
   end
 #    can :read, :all
