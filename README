@@ -1,9 +1,11 @@
 >>>> Candidate Tracking
 
 //todo: 
-				
 				set default user role to applicant (upon creation) => done
 				allow users to edit their own user profiles => done
+				
+//thoughts:
+				Applications (besides for having a strange name like "Applikation"), will be an an uneditable User object (created by an Applicant) saved to a different table.  This'll all work out, trust me...
 
 >> Purpose
 
