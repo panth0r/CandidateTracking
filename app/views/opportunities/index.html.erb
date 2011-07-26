@@ -6,7 +6,7 @@
     <th>Responsibilities</th>
     <th>Overview</th>
     <th>Qualifications</th>
-    <th></th>
+    <th>Location</th>
     <th></th>
     <th></th>
   </tr>
@@ -17,6 +17,7 @@
     <td><%= opportunity.responsibilities %></td>
     <td><%= opportunity.overview %></td>
     <td><%= opportunity.qualifications %></td>
+		<td><%= opportunity.location %></td>
     <td><%= link_to 'Show', opportunity %></td>
 		<% if can? :update, Opportunity %>
     	<td><%= link_to 'Edit', edit_opportunity_path(opportunity) %></td>

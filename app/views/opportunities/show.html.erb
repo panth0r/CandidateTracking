@@ -20,6 +20,11 @@
   <%= @opportunity.qualifications %>
 </p>
 
+<p>
+	<b>Location:</b>
+	<%= @opportunity.location %>
+</p>
+
 <% if can? :update, @user %>
 	<%= link_to 'Edit', edit_opportunity_path(@opportunity) %> |
 <% end %>
