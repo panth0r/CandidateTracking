@@ -1,6 +1,6 @@
 <h1>Listing users</h1>
-
-<table>
+<%= will_paginate @users %>
+<table class="users">
   <tr>
     <th>Fname</th>
     <th>Mname</th>
@@ -13,9 +13,6 @@
     <th>Resume txt</th>
     <th>Resume bin</th>
     <th>Cletter</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @users.each do |user| %>
@@ -39,6 +36,8 @@
   </tr>
 <% end %>
 </table>
+
+<%= will_paginate @users %>
 
 <br />
 

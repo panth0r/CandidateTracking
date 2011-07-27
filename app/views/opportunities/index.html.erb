@@ -1,32 +1,35 @@
-<h1>Listing opportunities</h1>
+<h1>All Opportunities</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
+<%= will_paginate @opportunities %>
+
+<table class="opportunities">
+	<tr>
+		<th>Job ID</th>
+		<th>Title</th>
     <th>Responsibilities</th>
     <th>Overview</th>
     <th>Qualifications</th>
     <th>Location</th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @opportunities.each do |opportunity| %>
-  <tr>
-    <td><%= opportunity.title %></td>
-    <td><%= opportunity.responsibilities %></td>
-    <td><%= opportunity.overview %></td>
-    <td><%= opportunity.qualifications %></td>
-		<td><%= opportunity.location %></td>
-    <td><%= link_to 'Show', opportunity %></td>
-		<% if can? :update, Opportunity %>
-    	<td><%= link_to 'Edit', edit_opportunity_path(opportunity) %></td>
-    	<td><%= link_to 'Destroy', opportunity, :confirm => 'Are you sure?', :method => :delete %></td>
-		<% end %>
-  </tr>
-<% end %>
+	</tr>
+	<% @opportunities.each do |opportunity| %>
+		<tr>
+			<td><%= opportunity.id %></td>
+			<td><%= opportunity.title %></td>
+			<td><%= opportunity.responsibilities %></td>
+			<td><%= opportunity.overview %></td>
+			<td><%= opportunity.qualifications %></td>
+			<td><%= opportunity.location %></td>
+			<td><%= link_to 'Show', opportunity %></td>
+			<% if can? :update, Opportunity %>
+    		<td><%= link_to 'Edit', edit_opportunity_path(opportunity) %></td>
+    		<td><%= link_to 'Destroy', opportunity, :confirm => 'Are you sure?', :method => :delete %></td>
+			<% end %>
+		</tr>
+	<% end %>
 </table>
 
-<br />
+<%= will_paginate %>
 
-<%= link_to 'New Opportunity', new_opportunity_path %>
+<% if can? :create, Opportunity %>
+	<%= link_to 'New Opportunity', new_opportunity_path %>
+<% end %>

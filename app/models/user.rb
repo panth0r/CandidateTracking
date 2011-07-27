@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :fname, :mname, :lname, :pnum, :address, :referral, :resume_txt,
                   :resume_bin, :cletter, :role
+                  
+  cattr_reader :per_page
+  @@per_page = 2
   
   ROLES = %w[recruiter admin applicant]  
   
