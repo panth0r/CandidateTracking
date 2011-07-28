@@ -8,11 +8,6 @@
 	<% end %>
 <% end %>
 
-<%= form_for :opportunity do |form| %>
-	Or search by location:
-	<%= form.select(:location, @locations ) %>
-<% end %>
-
 <%= will_paginate @opportunities %>
 
 <table class="opportunities">
