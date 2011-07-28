@@ -1,5 +1,13 @@
 <h1>All Opportunities</h1>
 
+<% form_tag request.path, :method => 'get' do %>
+	<% content_tag :label do %>
+		Search Job Titles:
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search", :title => nil %>
+	<% end %>
+<% end %>
+
 <%= will_paginate @opportunities %>
 
 <table class="opportunities">
@@ -27,6 +35,16 @@
 		</tr>
 	<% end %>
 </table>
+
+<ul>
+<% for opportunity in @opportunities %>
+	<li>
+		<%= link_to opportunity.title, opportunity_path(opportunity) %>
+		|	<%= link_to "Edit", edit_opportunity_path(opportunity) %>
+		|	<%= link_to "Destroy", opportunity_path(opportunity), :method => :delete %>
+	</li>
+<% end %>
+</ul>
 
 <%= will_paginate %>
 

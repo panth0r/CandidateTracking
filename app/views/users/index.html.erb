@@ -1,5 +1,7 @@
-<h1>Listing users</h1>
+<h1>All Users</h1>
+
 <%= will_paginate @users %>
+
 <table class="users">
   <tr>
     <th>Fname</th>
@@ -15,30 +17,29 @@
     <th>Cletter</th>
   </tr>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.fname %></td>
-    <td><%= user.mname %></td>
-    <td><%= user.lname %></td>
-		<td><%= user.role %></td>
-    <td><%= user.email %></td>
-    <td><%= user.pnum %></td>
-    <td><%= user.address %></td>
-    <td><%= user.referral %></td>
-    <td><%= user.resume_txt %></td>
-    <td><%= user.resume_bin %></td>
-    <td><%= user.cletter %></td>
-    <td><%= link_to 'Show', user %></td>
-		<% if can? :update, @user %>
-    	<td><%= link_to 'Edit', edit_user_path(user) %></td>
-    	<td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
-		<% end %>
-  </tr>
-<% end %>
+	<% @users.each do |user| %>
+	  <tr>
+	    <td><%= user.fname %></td>
+	    <td><%= user.mname %></td>
+	    <td><%= user.lname %></td>
+			<td><%= user.role %></td>
+	    <td><%= user.email %></td>
+	    <td><%= user.pnum %></td>
+	    <td><%= user.address %></td>
+	    <td><%= user.referral %></td>
+	    <td><%= user.resume_txt %></td>
+	    <td><%= user.resume_bin %></td>
+	    <td><%= user.cletter %></td>
+	    <td><%= link_to 'Show', user %></td>
+			<% if can? :update, @user %>
+	    	<td><%= link_to 'Edit', edit_user_path(user) %></td>
+	    	<td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+			<% end %>
+	  </tr>
+	<% end %>
 </table>
 
 <%= will_paginate @users %>
-
-<br />
-
-<%= link_to 'New User', new_user_path %>
+<% if can? :create, User %>
+	<%= link_to 'New User', new_user_path %>
+<% end %>

@@ -14,14 +14,18 @@
 	<div id="container">
 		<div id="user_nav">
 			<% if user_signed_in? %>
-				Sign in as <%= current_user.email %>. Not you?
+				Signed in as <%= current_user.email %>. Not you?
 				<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+				<%= link_to "Update Profile", edit_user_path(current_user.id) %>
 			<% else %>	
 				<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
 			<% end %>
 		</div>
 		<div id="pages">
-			<%= link_to 'All Opportunities', root_url %>
+			<%= link_to 'All Opportunities', opportunities_path %>
+			<% if can? :read, User %>
+    		<%= link_to 'All Users', users_path %>
+			<% end %>
 		</div>
 	</div>
 

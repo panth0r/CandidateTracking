@@ -6,7 +6,8 @@ class OpportunitiesController < ApplicationController
   # GET /opportunities.xml
   def index
 #    @opportunities = Opportunity.all
-    @opportunities = Opportunity.paginate(:page => params[:page])
+#    @opportunities = Opportunity.paginate(:page => params[:page])
+    @opportunities = Opportunity.search(params[:search], params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

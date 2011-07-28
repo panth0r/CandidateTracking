@@ -11,9 +11,10 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :fname, :mname, :lname, :pnum, :address, :referral, :resume_txt,
                   :resume_bin, :cletter, :role
-                  
+  
+  #the following two lines for pagination                
   cattr_reader :per_page
-  @@per_page = 2
+  @@per_page = 5
   
   ROLES = %w[recruiter admin applicant]  
   
