@@ -8,6 +8,14 @@ class OpportunitiesController < ApplicationController
 #    @opportunities = Opportunity.all
 #    @opportunities = Opportunity.paginate(:page => params[:page])
     @opportunities = Opportunity.search(params[:search], params[:page])
+    @locations = Opportunity.find(:all).collect { |opportunity| opportunity.location.upcase }.uniq
+#    @locations = []
+#    locations = Opportunity.find(:all, :select => 'location')
+#    locations.each do |location|
+#      @locations << location
+#    end
+    
+#    locations = Opportunities.find(:all, :include => [:locations])
 
     respond_to do |format|
       format.html # index.html.erb
