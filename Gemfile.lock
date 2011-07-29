@@ -45,8 +45,6 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mocha (0.9.12)
-    nifty-generators (0.4.6)
     orm_adapter (0.0.5)
     polyglot (0.3.1)
     rack (1.2.3)
@@ -85,8 +83,6 @@ PLATFORMS
 DEPENDENCIES
   cancan
   devise (= 1.4.2)
-  mocha
-  nifty-generators
   rails (= 3.0.9)
   sqlite3-ruby (= 1.2.5)
   will_paginate (= 3.0.pre4)
