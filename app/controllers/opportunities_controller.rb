@@ -7,7 +7,7 @@ class OpportunitiesController < ApplicationController
   def index
 #    @opportunities = Opportunity.all
 #    @opportunities = Opportunity.paginate(:page => params[:page])
-    @opportunities = Opportunity.search(params[:search], params[:page])
+    @opportunities = Opportunity.search(params[:search], params[:location], params[:page])
     @locations = Opportunity.find(:all).collect { |opportunity| opportunity.location.upcase }.uniq
 #    @locations = []
 #    locations = Opportunity.find(:all, :select => 'location')

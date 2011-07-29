@@ -2,15 +2,12 @@
 
 <% form_tag request.path, :method => 'get' do %>
 	<% content_tag :label do %>
-		Search Job Titles:
-		<%= text_field_tag :search, params[:search] %>
-		<%= submit_tag "Search", :title => nil %>
+		Search job titles: <%= text_field_tag :search, params[:search] -%>
 	<% end %>
-<% end %>
-
-<%= form_for :opportunity do |form| %>
-	Or search by location:
-	<%= form.select(:location, @locations ) %>
+	<% content_tag :label do %>
+		And/or select a location: <%= select_tag "location", options_for_select(@locations), {:include_blank => true} %>
+	<% end %>
+	<%= submit_tag "Search", :title => nil %>
 <% end %>
 
 <%= will_paginate @opportunities %>
