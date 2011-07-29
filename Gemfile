@@ -10,6 +10,8 @@ gem 'devise', '1.4.2'
 gem 'cancan'
 gem 'will_paginate','3.0.pre4'
 
+gem "nifty-generators", :group => :development
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -32,3 +34,4 @@ gem 'will_paginate','3.0.pre4'
 # group :development, :test do
 #   gem 'webrat'
 # end
+gem "mocha", :group => :test

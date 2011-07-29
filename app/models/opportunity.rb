@@ -9,7 +9,7 @@ class Opportunity < ActiveRecord::Base
   def self.search(search, page)
     if search
       paginate :per_page => 5, :page => page,
-               :conditions => ['title LIKE ?', "%#{search}%"], :order => 'id'
+               :conditions => ['title LIKE ?', "%#{search}%"], :order => 'title'
     else
       paginate :per_page => 5, :page => page
     end
