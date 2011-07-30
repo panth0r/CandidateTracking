@@ -6,6 +6,7 @@ class Ability
     can :manage, Opportunity if user.role == "recruiter"
     can :manage, :all if user.role == "admin"
     can :read, User if user.role == "recruiter"
+    can :create, Applikation if user.role == "applicant"
     can :read, Opportunity
 #    can :edit, @user #useless
     can :manage, user

@@ -10,7 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110726213037) do
+ActiveRecord::Schema.define(:version => 20110730192839) do
+
+  create_table "applikations", :force => true do |t|
+    t.string   "fname"
+    t.string   "mname"
+    t.string   "lname"
+    t.string   "pnum"
+    t.text     "address"
+    t.string   "referral"
+    t.text     "resume_txt"
+    t.binary   "resume_bin"
+    t.text     "cleter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "opportunities", :force => true do |t|
     t.string   "title"

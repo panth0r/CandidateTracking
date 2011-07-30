@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fname:</b>
+  <%= @applikation.fname %>
+</p>
+
+<p>
+  <b>Mname:</b>
+  <%= @applikation.mname %>
+</p>
+
+<p>
+  <b>Lname:</b>
+  <%= @applikation.lname %>
+</p>
+
+<p>
+  <b>String:</b>
+  <%= @applikation.pnum %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @applikation.address %>
+</p>
+
+<p>
+  <b>Referral:</b>
+  <%= @applikation.referral %>
+</p>
+
+<p>
+  <b>Resume txt:</b>
+  <%= @applikation.resume_txt %>
+</p>
+
+<p>
+  <b>Resume bin:</b>
+  <%= @applikation.resume_bin %>
+</p>
+
+<p>
+  <b>Cleter:</b>
+  <%= @applikation.cleter %>
+</p>
+
+
+<%= link_to 'Edit', edit_applikation_path(@applikation) %> |
+<%= link_to 'Back', applikations_path %>

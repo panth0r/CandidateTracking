@@ -1,4 +1,6 @@
 CandidateTracking::Application.routes.draw do
+  resources :applikations
+
   resources :opportunities
 
   devise_for :users

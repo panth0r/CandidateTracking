@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fname: MyString
+  mname: MyString
+  lname: MyString
+  string: 
+  text: 
+  referral: MyString
+  resume_txt: MyText
+  resume_bin: 
+  cleter: MyText
+
+two:
+  fname: MyString
+  mname: MyString
+  lname: MyString
+  string: 
+  text: 
+  referral: MyString
+  resume_txt: MyText
+  resume_bin: 
+  cleter: MyText

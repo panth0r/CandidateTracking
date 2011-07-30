@@ -31,5 +31,8 @@
 <% if can? :destroy, @user %>
 	<%= link_to "Destroy", @user, :method => :delete, :confirm => "Are you sure?" %> |
 <% end %>
+<% if can? :create, Applikation %>
+	<%= link_to "Apply to Opportunity", new_applikation_path(@opportunity) %>
+<% end %>
 
 <%= link_to 'Back', opportunities_path %>
