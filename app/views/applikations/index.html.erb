@@ -1,0 +1,39 @@
+<h1>Listing applikations</h1>
+
+<table>
+  <tr>
+    <th>Fname</th>
+    <th>Mname</th>
+    <th>Lname</th>
+    <th>String</th>
+    <th>Text</th>
+    <th>Referral</th>
+    <th>Resume txt</th>
+    <th>Resume bin</th>
+    <th>Cleter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @applikations.each do |applikation| %>
+  <tr>
+    <td><%= applikation.fname %></td>
+    <td><%= applikation.mname %></td>
+    <td><%= applikation.lname %></td>
+    <td><%= applikation.pnum %></td>
+    <td><%= applikation.address %></td>
+    <td><%= applikation.referral %></td>
+    <td><%= applikation.resume_txt %></td>
+    <td><%= applikation.resume_bin %></td>
+    <td><%= applikation.cleter %></td>
+    <td><%= link_to 'Show', applikation %></td>
+    <td><%= link_to 'Edit', edit_applikation_path(applikation) %></td>
+    <td><%= link_to 'Destroy', applikation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Applikation', new_applikation_path %>

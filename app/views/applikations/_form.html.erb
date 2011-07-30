@@ -1,0 +1,53 @@
+<%= form_for(@applikation) do |f| %>
+  <% if @applikation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@applikation.errors.count, "error") %> prohibited this applikation from being saved:</h2>
+
+      <ul>
+      <% @applikation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fname %><br />
+    <%= f.text_field :fname %>
+  </div>
+  <div class="field">
+    <%= f.label :mname %><br />
+    <%= f.text_field :mname %>
+  </div>
+  <div class="field">
+    <%= f.label :lname %><br />
+    <%= f.text_field :lname %>
+  </div>
+  <div class="field">
+    <%= f.label :pnum %><br />
+    <%= f.text_field :pnum %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :referral %><br />
+    <%= f.text_field :referral %>
+  </div>
+  <div class="field">
+    <%= f.label :resume_txt %><br />
+    <%= f.text_area :resume_txt %>
+  </div>
+  <div class="field">
+    <%= f.label :resume_bin %><br />
+    <%= f.text_field :resume_bin %>
+  </div>
+  <div class="field">
+    <%= f.label :cleter %><br />
+    <%= f.text_area :cleter %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
