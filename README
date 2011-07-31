@@ -1,28 +1,6 @@
 >>>> Candidate Tracking
 
-//todo: 
-				set default user role to candidate (upon creation) => done
-				allow users to edit their own user profiles => done
-				write some tests (to test Users, their Abilities and Opportunities)
-				implement applikations
-				Indicate to what Opportunities Applicants have applied
-				List the Applicants who have applied to a particular Opportunity
-					<for the above two problems, "has and belongs to many"
-				standardize nounage (pick one \:) "Candidates" or "Applicants"
-				
-//thoughts:
-				Applikations are going to be a copy of an Applicant at the time the
-				Applikation was made with a boolean viewable attribute and a foreign key
-				linking the Applikation to an Opportunity; Applicants will be able to
-				create and withdraw Applikations; after withdrawing, the Applikation
-				will will remain in the Applikations table (for Admins' and Recruiters'
-				future reference) and the Applicant will be unable to reapply to the
-				Opportunity
-				*Opportunities should indicate "Applied" if an Candidate applied to it
-					and "Withdrawn" if an Applicant withdrew from the Opportunity
-				*When an Opportunity is "Filled," the Opportunity should indicate such
-					and should only be viewable by Admins, Recruiters and Applicants
-					who've already applied to the Opportunity
+>> todo & thoughts' purposes are now being served by my commit statements
 
 >> Purpose
 
