@@ -1,10 +1,11 @@
 class Opportunity < ActiveRecord::Base
   #the following two lines for pagination
   cattr_reader :per_page
+  @@per_page = 5
+  
+  has_many :applikations
   
   attr_accessible :location, :title, :responsibilities, :overview, :qualifications
-  
-  @@per_page = 5
   
   def self.search(search, location, page)
     if search && location

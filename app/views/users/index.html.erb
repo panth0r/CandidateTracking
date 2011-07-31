@@ -4,6 +4,7 @@
 
 <table class="users">
   <tr>
+		<th>User ID</th>
     <th>Fname</th>
     <th>Mname</th>
     <th>Lname</th>
@@ -19,6 +20,7 @@
 
 	<% @users.each do |user| %>
 	  <tr>
+			<td><%= user.id %></td>
 	    <td><%= user.fname %></td>
 	    <td><%= user.mname %></td>
 	    <td><%= user.lname %></td>

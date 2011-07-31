@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+		<th>Email</th>
     <th>Fname</th>
     <th>Mname</th>
     <th>Lname</th>
@@ -18,6 +19,7 @@
 
 <% @applikations.each do |applikation| %>
   <tr>
+		<td><%= applikation.email %></td>
     <td><%= applikation.fname %></td>
     <td><%= applikation.mname %></td>
     <td><%= applikation.lname %></td>

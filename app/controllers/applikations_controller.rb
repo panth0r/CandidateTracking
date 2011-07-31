@@ -2,8 +2,12 @@ class ApplikationsController < ApplicationController
   # GET /applikations
   # GET /applikations.xml
   def index
-    @applikations = Applikation.all
-
+    if can? :manage, Opportunity
+      @applikations = Applikation.all
+    else
+      @applikations = Applikation.find_all_by_user_id(current_user.id)
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @applikations }
@@ -25,6 +29,7 @@ class ApplikationsController < ApplicationController
   # GET /applikations/new.xml
   def new
     @applikation = Applikation.new
+    @opportunity = Opportunity.find(params[:opportunity])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +46,7 @@ class ApplikationsController < ApplicationController
   # POST /applikations.xml
   def create
     @applikation = Applikation.new(params[:applikation])
+    @applikation.user_id = current_user.id
 
     respond_to do |format|
       if @applikation.save

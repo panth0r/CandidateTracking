@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
                   :fname, :mname, :lname, :pnum, :address, :referral, :resume_txt,
                   :resume_bin, :cletter, :role
   
+  has_many :applikations
+  has_many :opportunities, :through => :applikations
+  
   #the following two lines for pagination                
   cattr_reader :per_page
   @@per_page = 5
