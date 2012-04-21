@@ -1,4 +1,4 @@
-CandidateTracking::Application.routes.draw do
+Adproj::Application.routes.draw do
   resources :applikations
 
   resources :opportunities
